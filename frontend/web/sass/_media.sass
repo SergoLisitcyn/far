@@ -1,0 +1,284 @@
+@import "vars"
+
+// @media (max-width: 1440px)
+
+
+@media (max-width: 1100px)
+    .hidden-xs
+        display: none
+    .hidden-lg
+        display: block
+
+    .btn
+        max-width: 100% 
+
+    .header
+        background-position: 70% 100%
+        &__top
+            padding: 21px 0 45px
+        &__logo
+            order: 1
+        &__menu
+            order: 3
+        &__phone
+            order: 2
+            margin-left: 0
+        &__content
+            flex-direction: column
+        &__title,
+        &__descr
+            max-width: 100%
+        &__info
+            img
+                max-width: 500px
+        &__image
+            margin-top: 30px
+            text-align: center
+
+    .menu
+        &__nav
+            width: 100%
+        &__list
+            flex-direction: column
+        &__link
+            color: #fff
+            &.active
+                color: #3CCFED
+        &__item
+            color: #FFFFFF
+            &:not(:last-child)
+                margin-right: 0
+                margin-bottom: 21px
+            .currentPage
+                color: #3CCFED !important
+        &__body
+            z-index: 2
+            position: fixed
+            width: 100%
+            min-height: 300px
+            top: 0
+            left: 0
+            background-color: #1427A8
+            overflow: auto
+            transform: translateY(-100%)
+            transition: all .5s ease
+            padding: 30px 60px 45px
+            &.active
+                transform: translateY(0)
+                display: block
+
+
+    .icon-menu
+        display: block
+        position: absolute
+        top: 50px
+        right: 25px
+        width: 30px
+        height: 18px
+        cursor: pointer
+        z-index: 5
+        span
+            transition: all .5s ease
+            top: 8px
+            left: 0
+            position: absolute
+            width: 100%
+            height: 2px
+            background-color: #4d4959
+            &:first-child
+                top: 0
+            &:last-child
+                top: auto
+                bottom: 0
+        &.active span
+            background-color: #fff
+            transform: scale(0)
+            &:first-child
+                transform: rotate(-45deg)
+                top: 8px
+            &:last-child
+                transform: rotate(45deg)
+                bottom: 8px
+
+    .advantages
+        &__items
+            flex-direction: column
+
+    .decisions
+        &__item
+            flex-direction: column
+            .decisions
+                &__info
+                    order: 1
+                &__image
+                    order: 2
+                    margin-top: 46px
+            
+        &__info
+            max-width: 100%
+
+    .footer
+        &__row
+            width: 100%
+        &__box
+            flex-direction: column
+        &__menu
+            margin-top: 30px
+            flex-direction: column
+        &__link:last-child
+            margin-bottom: 10px
+
+@media (max-width: 950px)
+    .vacancy
+        padding-top: 0
+        padding-bottom: 0
+        &__box
+            display: none
+        &__body
+            margin-top: 0
+        .accordion-menu
+            display: block
+        &__top
+            .vacancy__link
+                display: none
+        &__content
+            flex-direction: column
+            .vacancy__link
+                display: block
+        &__information
+            width: 100%
+        &__sidebar
+            width: 100%
+            &-address
+                max-width: 100%
+                margin-top: 43px
+            &-map
+                margin: 0 -20px
+                margin-top: 20px
+                font-size: 0
+                iframe
+                    height: 277px
+        &__share
+            display: none
+            &-d
+                display: block
+                margin-top: 22px
+                max-width: 440px
+                width: 100%
+
+
+@media (max-width: 660px)
+    .header
+        &__phone
+            display: none
+    .phone-number-clone
+        display: block
+        margin-top: 28px
+
+    .menu
+        &__body
+            flex-direction: column
+            align-items: flex-start
+
+    .item
+        margin: 0 15px
+
+    .decisions
+        padding: 70px 0 86px
+
+    .contacts
+        padding-top: 80px
+        padding-bottom: 78px
+        .container
+            padding: 0
+        &__row
+            flex-direction: column
+        &__box
+            padding: 0 15px
+            margin-right: 0
+            margin-bottom: 40px
+
+    .footer
+        padding-bottom: 60px
+        &__row
+            flex-direction: column
+        &__box
+            margin-left: 0
+            margin-top: 45px
+            width: 100%
+            flex-direction: row
+        &__info
+            order: 2
+        &__menu
+            order: 1
+            margin-top: 0
+        &__copyright
+            margin-top: 71px
+
+    #decisionsPage
+        .decisions
+            padding: 0 0 86px
+
+@media (max-width: 500px)
+    body
+        font-size: 14px
+    .title
+        font-size: 22px
+    .container
+        padding: 0 15px
+    .header
+        &__content
+            margin-top: 0
+        &__logo
+            max-width: 200px
+        &__title
+            font-size: 24px
+        &__subtitle
+            font-size: 21px
+            margin-top: 15px
+
+    .phone__number
+        font-size: 21px
+    .icon-menu
+        top: 35px
+
+    .decisions
+        &__info-title
+            font-size: 18px
+            line-height: 28px
+
+    .advantages
+        &__items
+            margin-top: 40px
+
+    .vacancies
+        &__link
+            padding: 14px 25px
+            &-title
+                font-size: 18px
+
+    .response
+        &__title
+            font-size: 22px
+        &__subtitle
+            font-size: 18px
+        .vacancy
+            &__form
+                &-wrap
+                    flex-direction: column
+                &-col
+                    width: 100%
+                    &:not(:last-child)
+                        margin-bottom: 20px
+    .vacancy
+        &__title
+            font-size: 24px
+        &__sidebar-map
+            margin: 0 -15px
+        &__share
+            padding: 20px 35px
+
+    .accordion-menu
+        &__dropdownlink-title
+            font-size: 22px
+            

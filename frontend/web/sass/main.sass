@@ -1,0 +1,863 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+
+*,
+*:before,
+*:after
+	-moz-box-sizing: border-box
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: $white
+
+body
+	margin: 0
+	padding: 0
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+
+img
+	height: auto
+	width: 100%
+
+body.lock
+	overflow: hidden
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+
+p, ul, li
+	padding: 0
+	margin: 0
+
+li
+	list-style-type: none
+
+h1, h2, h3, h4, h5, h6
+	padding: 0
+	margin: 0
+
+.hidden-lg
+	display: none
+
+
+.currentPage
+	color: $dark-blue !important
+
+.btn
+	position: relative
+	overflow: hidden
+	padding: 16px 15px
+	font-weight: bold
+	font-size: 16px
+	max-width: 240px
+	width: 100%
+	cursor: pointer
+	border: none
+	text-align: center
+	border-radius: 3px
+	color: $white
+	display: block
+	&--dark-blue
+		background: $dark-blue
+	&::before
+		content: ""
+		display: block
+		position: absolute
+		background: rgba(255, 255, 255, 0.5)
+		width: 60px
+		height: 100%
+		left: 0
+		top: 0
+		opacity: 0.5
+		filter: blur(30px)
+		transform: translateX(-100px) skewX(-15deg)
+	&::after
+		content: ""
+		display: block
+		position: absolute
+		background: rgba(255, 255, 255, 0.2)
+		width: 30px
+		height: 100%
+		left: 30px
+		top: 0
+		opacity: 0
+		filter: blur(5px)
+		transform: translateX(-100px) skewX(-15deg)
+	&:hover
+		cursor: pointer
+	&:hover::before
+		transform: translateX(300px) skewX(-15deg)
+		opacity: 0.6
+		transition: 1s
+	&:hover::after
+		transform: translateX(300px) skewX(-15deg)
+		opacity: 1
+		transition: 1s
+
+section
+	padding-top: 90px
+
+.container
+	max-width: 1170px
+	margin: 0 auto
+	padding: 0 20px
+	width: 100%
+
+
+
+/* Header ****************************************/
+.header
+	background-image: url(../img/header.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	margin-bottom: -1px
+	&__top
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+		line-height: 1.65
+		padding-top: 55px
+		padding-bottom: 45px
+	&__logo
+		max-width: 300px
+	&__menu
+		margin-left: 40px
+	&__content
+		margin-top: 15px
+		display: flex
+		padding-bottom: 65px
+	&__title
+		font-weight: bold
+		font-size: 42px
+		color: $text
+		max-width: 650px
+	&__subtitle
+		font-size: 24px
+		color: $text
+		margin-top: 21px
+	&__descr
+		font-weight: 400
+		line-height: 29px
+		color: $text
+		max-width: 570px
+		margin-top: 31px
+	&__button
+		background: $accent
+		margin-top: 40px
+	&__image
+		img
+			max-width: 600px
+
+.phone
+	img
+		width: 18px
+	&__number
+		font-weight: bold
+		font-size: 24px
+		color: $accent
+		margin-left: 13px
+
+.phone-number-clone
+	display: none
+		
+.menu
+	&__body
+		display: flex
+		align-items: center
+		justify-content: flex-end
+	&__list
+		display: flex
+	&__item
+		&:not(:last-child)
+			margin-right: 37px
+	&__link
+		font-size: 18px
+		color: #000000
+
+.title
+	font-weight: bold
+	font-size: 36px
+	color: $text
+	&--white
+		color: $white
+
+
+
+/* Advantages ****************************************/
+.advantages
+	background-image: url(../img/advantages.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	padding-bottom: 90px
+	&__items
+		margin-top: 46px
+		display: flex
+		position: relative
+	
+.item
+	padding: 30px
+	background-color: $white
+	margin: 0 15px
+	&__image
+		max-width: 41px
+	&__text
+		line-height: 29px
+		color: $text
+		margin-top: 28px
+
+.slider
+	&__arrow
+		position: relative
+		margin-top: 55px
+
+/** Slider ************/
+.slick-list
+	overflow: hidden
+	margin: 0 -15px
+.slick-track
+	display: flex
+.slick-arrow
+	position: absolute
+	top: 0
+	z-index: 10
+	font-size: 0
+	width: 50px
+	height: 30px
+	border: none
+	outline: none
+	cursor: pointer
+.slick-arrow.slick-prev
+    left: 0
+    background: url(../img/arrow-prev.svg) 0 0 / 100% no-repeat
+.slick-arrow.slick-next
+    left: 75px
+    background: url(../img/arrow-next.svg) 0 0 / 100% no-repeat
+.slick-arrow.slick-disabled
+    opacity: .4
+.slick-dots
+	display: flex
+	align-items: center
+	justify-content: center
+	margin-top: 20px
+.slick-dots li
+	margin: 0 5px
+.slick-dots li.slick-active button
+	background-color: $white
+	border: 1px solid $white
+.slick-dots button
+	font-size: 0
+	width: 15px
+	height: 15px
+	border: 1px solid $white
+	background-color: transparent
+	border-radius: 50%
+
+
+
+/* Decisions ****************************************/
+.decisions
+	background-image: url(../img/decisions.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	padding-bottom: 126px
+	&__title
+		margin-bottom: 44px
+	&__item
+		display: flex
+		align-items: center
+		justify-content: space-between
+		&:not(:last-child)
+			margin-bottom: 68px
+	&__info
+		max-width: 600px
+		&-title
+			font-weight: bold
+			font-size: 28px
+			color: $text
+		&-text
+			line-height: 29px
+			color: $text
+			margin-top: 15px
+	&__image
+		max-width: 457px
+
+
+
+/* Vacancies ****************************************/
+.vacancies
+	padding-top: 71px
+	padding-bottom: 87px
+	background-color: $dark-blue
+	&__row
+		max-width: 970px
+		margin: 0 auto
+	&__title
+		text-align: center
+		margin-bottom: 40px
+	&__list
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		width: 100%
+	&__item
+		width: 100%
+		&:not(:last-child)
+			margin-bottom: 18px
+	&__link
+		display: block
+		padding: 14px 35px
+		text-decoration: none
+		background: $white
+		border-radius: 3px
+		transition: all .5s ease
+		&-title
+			font-size: 24px
+			color: $accent
+			font-weight: normal
+	&__info
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		margin-top: 7px
+		&-text
+			font-size: 14px
+			color: #000000
+		&-point
+			padding: 0 8px
+			color: #000000
+	&__message
+		margin-top: 34px
+		&-text
+			color: $white
+			&:not(:last-child)
+				margin-bottom: 35px
+		&-email
+			color: $accent
+
+
+
+/* Response ****************************************/
+.response
+	text-align: center
+	padding-bottom: 104px
+	background: #E9F0FD
+	&__title
+		font-weight: bold
+		font-size: 36px
+		text-align: center
+		color: $text
+	&__subtitle
+		margin-top: 13px
+		font-size: 24px
+		text-align: center
+		color: $text
+		font-weight: normal
+	.vacancy
+		&__form
+			margin-top: 43px
+			display: flex
+			flex-direction: column
+			flex-wrap: wrap
+			max-width: 970px
+			margin: 35px auto 0 
+			&-wrap
+				display: flex
+				justify-content: space-between
+				margin-bottom: 20px
+			&-col
+				width: 48%
+			&-item
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+			&-label
+				color: $text
+				margin-bottom: 7px
+				padding-left: 15px
+			&-input
+				width: 100%
+				transition: all .5s ease
+				box-shadow: none
+				background: $white
+				border: 1px solid #9EB5DE
+				border-radius: 4px
+				resize: none
+				font-size: 16px
+				padding: 15px
+				height: 60px
+				&::placeholder
+					color: #999999
+		&__dropzone
+			margin-top: 15px
+			&-input
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: 0
+				padding: 0
+				width: 100%
+				height: 100%
+				outline: none
+				opacity: 0
+			&-body
+				width: 100%
+				background: #D1DBED
+				border: 1px solid #9EB5DE
+				border-radius: 4px
+				transition: all .3s
+				display: flex
+				justify-content: center
+				width: 100%
+				position: relative
+				padding: 18px
+				&:hover
+					border-color: $dark-blue
+			&-label
+				display: flex
+				justify-content: space-between
+			&-title
+				text-align: left
+				font-size: 16px
+				padding-left: 15px
+				margin-bottom: 7px
+			&-message
+				font-size: 16px
+				width: 100%
+				&-title
+					font-size: 16px
+					color: #999999
+			&-link
+				margin: 20px 0
+				position: relative
+				&-label
+					position: absolute
+					transform: translateY(25px)
+					left: 0
+					color: $text
+					font-size: 16px
+					transition: all .25s ease
+					pointer-events: none
+					&.active
+						transform: translateY(3px)
+						font-size: 11px
+						color: $text
+						transition: all .25s ease
+				&-input
+					color: #172a3f
+					border: none
+					padding: 25px 10px 5px 0
+					background-color: transparent
+					font-size: 16px
+					width: 100%
+					border-bottom: 1px solid #9EB5DE
+					&:focus
+						border-color: #9EB5DE
+					&:hover
+						border-color: #9EB5DE
+			&-upload
+				display: none
+				&-image
+					max-height: 25px
+					max-width: 25px
+				&-remove
+					color: $white
+					background: $dark-blue
+					border: none
+					padding: 6px 12px
+					border-radius: 4px
+					transition: all .2s ease
+					outline: none
+					font-weight: 600
+					font-size: 12px
+					transition: all .5s ease
+					&-wrap
+						margin-top: 10px
+					&:hover
+						background: rgba(#1427A8, 0.8)
+						color: $white
+						transition: all .2s ease
+						cursor: pointer
+		&__btn
+			margin: 0 auto
+			margin-top: 37px
+.image-dropping
+	border-color: #127875
+.file-upload-input
+	cursor: pointer
+	width: 100%
+	height: 100%
+.social
+	margin-top: 50px
+	width: 100%
+	&__links
+		width: 100%
+		text-align: left
+		margin-bottom: 0
+.accept
+	margin-top: 15px
+	position: relative
+	width: 100%
+	input[type=checkbox]
+		display: none
+		visibility: hidden
+		opacity: 0
+	input[type=checkbox]+label
+		display: block
+		position: relative
+		cursor: pointer
+		padding-left: 35px
+		line-height: 24px
+		text-align: left
+		&:before
+			content: ''
+			position: absolute
+			width: 24px
+			height: 24px
+			top: 3px
+			left: 0
+			background: url(../img/checked.svg) no-repeat 50% 50%
+	input[type=checkbox]:checked+label:before
+		background: url(../img/checkbox.svg) no-repeat 50% 50%
+	a
+		text-decoration: none
+		border-bottom: 1px solid transparent
+		cursor: pointer
+		color: #4a4a4a
+		border-color: #4a4a4a
+
+
+
+/* Contacts ****************************************/
+.contacts
+	background-color: $white
+	padding-bottom: 100px
+	&__row
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__box
+		margin-right: 30px
+	&__name
+		margin-top: 22px
+		font-weight: bold
+		color: $text
+	&__link
+		color: $dark-blue
+		margin-top: 20px
+		display: block
+	&__info
+		margin-top: 33px
+	&__addr
+		position: relative
+		padding-left: 35px
+		display: block
+		color: $text
+		a
+			color: $text
+		&:not(:last-child)
+			margin-bottom: 15px
+		&::before
+			position: absolute
+			content: ''
+			background-image: url(../img/)
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+			top: 50%
+			left: 0
+			transform: translateY(-50%)
+	&__location
+		&::before
+			background-image: url(../img/location.svg)
+			width: 12px
+			height: 18px
+	&__phone
+		&::before
+			background-image: url(../img/phone-dark.svg)
+			width: 18px
+			height: 18px
+	&__mail
+		&::before
+			background-image: url(../img/mail.svg)
+			width: 21px
+			height: 15px
+	&__map
+		max-width: 674px
+		width: 100%
+		iframe
+			height: 277px
+			width: 100%
+
+
+
+/* Footer ****************************************/
+.footer
+	background-color: $dark-blue
+	padding: 48px 0 44px
+	&__row
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		width: 85%
+	&__info
+		flex: 1 1 50%
+	&__logo
+		max-width: 300px
+	&__box
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		margin-left: 100px
+		flex: 1 1
+	&__addr
+		color: $white
+		font-size: 14px
+		&:not(:last-child)
+			margin-bottom: 10px
+	&__mail
+		a
+			color: $accent
+	&__phone
+		a
+			color: $white
+	&__menu
+		display: flex
+		justify-content: space-between
+		flex: 1 1 50%
+	&__col
+		display: flex
+		flex-direction: column
+	&__link
+		color: $accent
+		font-size: 14px
+		&:not(:last-child)
+			margin-bottom: 10px
+	&__copyright
+		color: $white
+		display: flex
+		justify-content: flex-end
+		font-size: 14px
+		margin-top: 50px
+
+
+
+
+
+/* Decisions Page ****************************************/
+#decisionsPage
+	.header
+		background: #E9F0FD
+	.decisions
+		background-image: url(../img/section-bg.jpg)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		padding-top: 76px
+
+
+
+/* Vacancy Page ****************************************/
+#vacancyPage
+	.header
+		background: #E9F0FD
+.vacancy
+	padding-top: 60px
+	padding-bottom: 90px
+	background-image: url(../img/section-bg.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	&__link
+		background: $accent
+		padding: 16px 5px
+	&__body
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		margin-top: 55px
+	&__title
+		font-weight: bold
+		color: $accent
+		font-size: 36px
+		margin-bottom: 10px
+	&__share
+		background: $white
+		border: 1px solid #9EB5DE
+		padding: 20px 60px
+		width: 33%
+		&-d
+			display: none
+		&-row
+			text-align: center
+		&-title
+			font-size: 16px
+			color: #000000
+		&-links
+			margin-top: 20px
+			.ya-share2__list
+				display: flex
+				justify-content: space-evenly
+			.ya-share2__container_size_m .ya-share2__badge .ya-share2__icon
+				width: 40px !important
+				height: 40px !important
+				background-size: 40px 40px !important
+	&__content
+		display: flex
+		justify-content: space-between
+		.vacancy__link
+			display: none
+	&__information
+		width: 59%
+		p
+			margin: 35px 0
+			font-weight: 400
+			font-size: 16px
+			line-height: 29px
+		&-subtitle
+			font-weight: bold
+			margin-top: 35px
+			font-size: 18px
+			color: $text
+		&-list
+			margin-top: 15px
+			margin-bottom: 35px
+			li
+				position: relative
+				padding-left: 30px
+				margin-top: 3px
+				line-height: 29px
+				&::before
+					background: url(../img/item.svg) no-repeat 50% 50%
+					width: 9px
+					height: 15px
+					content: ''
+					position: absolute
+					top: 8px
+					left: 0
+	&__sidebar
+		width: 33%
+		&-address
+			max-width: 300px
+			margin: 0 auto
+			margin-top: 70px
+			&-title
+				font-weight: bold
+				font-size: 24px
+				color: $text
+			&-text
+				font-size: 16px
+				line-height: 29px
+				color: $text
+				margin-top: 5px
+		&-map
+			margin-top: 20px
+			iframe
+				width: 100%
+				height: 630px
+.vacanies__info-text
+	font-size: 20px
+	color: #000000
+	margin-top: 7px
+
+
+.vacancy
+	&__box
+		margin-top: 30px
+/** Accordion-menu ************************/
+.accordion-menu
+	width: 100%
+	display: none
+	margin-bottom: 34px
+	&.open
+		.accordion-menu__dropdownlink-title::after
+    		transform: translateY(-50%) rotate(180deg)
+	&__dropdownlink
+		cursor: pointer
+		display: block
+		padding: 20px 35px
+		position: relative
+		transition: all .4s ease-out
+		background: $accent
+		&-title
+			font-size: 24px
+			font-weight: 700
+			color: $white
+			position: relative
+			&::after
+				position: absolute
+				content: ''
+				right: 20px
+				top: 50%
+				margin-top: 0
+				width: 20px
+				height: 12px
+				transform: translateY(-50%)
+				background-image: url(../img/angle-down.svg)
+				background-repeat: no-repeat
+				background-position: center
+				background-size: cover
+	&__content
+		display: none
+		background: $accent
+		padding: 30px 35px
+		margin-top: -25px
+.box
+	padding: 30px 35px 30px
+	background: $accent
+	&__title
+		font-weight: bold
+		font-size: 24px
+		color: $white
+	&__content
+		margin-top: 20px
+	&__item
+		&:not(:last-child)
+			margin-bottom: 35px
+		&-title
+			font-weight: bold
+			font-size: 16px
+			color: $dark-blue
+			&.active
+				color: rgba(20, 39, 168, 0.4)
+	&__info
+		margin-top: 10px
+		color: $white
+		font-size: 12px
+		&-text
+			font-size: 12px
+			color: $white
+
+
+
+
+@import "media" // Always at the end

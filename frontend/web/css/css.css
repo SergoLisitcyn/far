@@ -1,0 +1,25 @@
+.vacancy__information li {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 3px;
+    line-height: 29px;
+}
+
+.vacancy__information li::before {
+    background: url(../img/item.svg) no-repeat 50% 50%;
+    width: 9px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+
+.vacancy__information ul {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.vacancy__information ul li p {
+    margin: 0 !important;
+}
