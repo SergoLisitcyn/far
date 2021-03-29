@@ -12,7 +12,14 @@ use mihaildev\ckeditor\CKEditor;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'parent_id')->textInput() ?>
+    <?=  $form->field($model, 'parent_id', [
+        'options' =>
+            ['id' => 'vacancy-parent_id', 'class' => 'form-group']
+    ])->dropDownList(
+        \yii\helpers\ArrayHelper::map(\common\models\Otdel::find()->all(), 'id', 'name'),
+        ['prompt' => 'Выбрать отдел']
+    );
+    ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -34,7 +41,10 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList([
+        '1' => 'Активен',
+        '0' => 'Неактивен'
+    ]) ?>
 
     <?= $form->field($model, 'sort')->textInput() ?>
 

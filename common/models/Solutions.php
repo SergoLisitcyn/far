@@ -50,9 +50,10 @@ class Solutions extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Title',
             'content' => 'Content',
-            'image' => 'Image',
-            'status' => 'Status',
-            'sort' => 'Sort',
+            'image' => 'Картинка',
+            'solutions_file' => 'Изображение',
+            'status' => 'Статус',
+            'sort' => 'Сортировка',
         ];
     }
 

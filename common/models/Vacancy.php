@@ -50,7 +50,7 @@ class Vacancy extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => 'Parent ID',
+            'parent_id' => 'Отдел',
             'name' => 'Название Вакансии',
             'sfera' => 'Сфера',
             'city' => 'Город',

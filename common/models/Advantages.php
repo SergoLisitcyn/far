@@ -48,10 +48,10 @@ class Advantages extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'content' => 'Content',
-            'image' => 'Image',
-            'advantages_file' => 'Image',
-            'status' => 'Status',
-            'sort' => 'Sort',
+            'advantages_file' => 'Картинка',
+            'image' => 'Картинка',
+            'status' => 'Статус',
+            'sort' => 'Сортировка',
         ];
     }
 

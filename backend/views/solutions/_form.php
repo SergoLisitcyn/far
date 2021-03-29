@@ -35,8 +35,10 @@ use yii\widgets\ActiveForm;
         '0' => 'Неактивен'
     ]) ?>
 
-    <?= $form->field($model, 'sort')->textInput()->hint('Сортировка по убыванию(если 0 то первый в списке)') ?>
-
+    <?= $form->field($model, 'sort')->dropDownList([
+        '0' => 'Картинка справа - текст слева',
+        '1' => 'Картинка слева - текст справа'
+    ]) ?>
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>

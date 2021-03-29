@@ -14,7 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList([
+        '1' => 'Активен',
+        '0' => 'Неактивен'
+    ]) ?>
 
     <?= $form->field($model, 'sort')->textInput() ?>
 

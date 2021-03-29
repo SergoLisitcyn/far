@@ -26,10 +26,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'content:ntext',
-            'image',
-            'status',
+            [
+                'label' => 'Логотип',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if($model->image){
+                        return Html::img($model->image,['style' => 'height: 30px;']);
+                    } else {
+                        return '';
+                    }
+
+                },
+            ],
+            [
+                'label' => 'Статус',
+                'value' => function ($model) {
+                    $result = '';
+                    if($model->status == 1){
+                        $result .= 'Активен';
+                    } else {
+                        $result .= 'Неактивен';
+                    }
+
+                    return $result;
+                },
+            ],
             'sort',
 
             ['class' => 'yii\grid\ActionColumn'],

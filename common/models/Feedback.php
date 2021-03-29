@@ -54,13 +54,13 @@ class Feedback extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'parent_id' => 'Parent ID',
-            'name' => 'Name',
-            'surname' => 'Surname',
-            'patronymic' => 'Patronymic',
-            'phone' => 'Phone',
+            'name' => 'Имя',
+            'surname' => 'Фамилия',
+            'patronymic' => 'Отчество',
+            'phone' => 'Телефон',
             'filename' => 'Filename',
-            'link' => 'Link',
-            'created_at' => 'Created At',
+            'link' => 'Ссылка',
+            'created_at' => 'Дата',
         ];
     }
     public function getOtdel()

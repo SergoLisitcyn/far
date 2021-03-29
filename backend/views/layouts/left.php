@@ -8,12 +8,12 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Navigation', 'options' => ['class' => 'header']],
-                    ['label' => 'Список резюме', 'icon' => 'book', 'url' => ['feedback/index']],
-                    ['label' => 'Вакансии', 'icon' => 'book', 'url' => ['vacancy/index']],
+                    ['label' => 'Список резюме', 'icon' => 'address-card', 'url' => ['feedback/index']],
+                    ['label' => 'Вакансии', 'icon' => 'list-alt', 'url' => ['vacancy/index']],
                     ["label" => "Справочник отделов", "url" => ["otdel/index"], "icon" => "book"],
-                    ["label" => "Главная страница", "url" => ["main-page/index"], "icon" => "book"],
-                    ["label" => "Преимущества", "url" => ["advantages/index"], "icon" => "book"],
-                    ["label" => "Решения", "url" => ["solutions/index"], "icon" => "book"],
+                    ["label" => "Главная страница", "url" => ["main-page/update?id=1"], "icon" => "cog"],
+                    ["label" => "Преимущества", "url" => ["advantages/index"], "icon" => "building-o"],
+                    ["label" => "Решения", "url" => ["solutions/index"], "icon" => "building-o"],
                 ],
             ]
         ) ?>

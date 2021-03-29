@@ -137,3 +137,13 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.table-bordered {
+    border: 1px solid #f4f4f4;
+    background: #fff !important;
+}
+
+section.content form {
+    background: #fff;
+    padding: 20px;
+}

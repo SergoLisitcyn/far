@@ -43,36 +43,6 @@ $(function () {
   });
 
 
-
-  // Slider
-  $('.advantages__items').slick({
-    arrows: true,
-    dots: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    appendArrows: $('.slider__arrow'),
-    infinite: false,
-    responsive: [
-      {
-          breakpoint: 1100,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-      },
-      {
-        breakpoint: 660,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true
-        },
-    }
-    ]
-  });
-
-
   // Form Focus
   $('.vacancy__form').find('input').on('focus blur keyup', function (e) {
 
