@@ -61,7 +61,7 @@ class VacancySearch extends Vacancy
             'id' => $this->id,
             'parent_id' => $this->parent_id,
             'status' => $this->status,
-            'sort' => $this->sort,
+//            'sort' => $this->sort,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

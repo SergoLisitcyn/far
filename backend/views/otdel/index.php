@@ -15,14 +15,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Создать Отдел', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+//        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -42,8 +42,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             'sort',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'label' => 'Действия',
+                'format' => 'raw',
+                'value' => function ($model, $index, $jobList) {
+                    return Html::tag('a', 'Смотреть', ['href' => \yii\helpers\Url::toRoute(['otdel/view', 'id' => $index]), 'class' => 'btn btn-primary', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Обновить', ['href' => \yii\helpers\Url::toRoute(['otdel/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['otdel/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
+                },
+            ],
         ],
     ]); ?>
 

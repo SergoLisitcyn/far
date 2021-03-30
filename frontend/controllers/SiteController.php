@@ -1,8 +1,10 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\About;
 use common\models\Feedback;
 use common\models\MainPage;
+use common\models\Terms;
 use common\models\Vacancy;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -94,7 +96,6 @@ class SiteController extends Controller
             }
 
             if ($feedback->save()) {
-
                 Yii::$app->session->setFlash(
                     'success',
                     'Резюме отправлено. Спасибо!'
@@ -179,7 +180,17 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $about = About::findOne(1);
+        return $this->render('about', [
+            'about' => $about,
+        ]);
+    }
+    public function actionTerms()
+    {
+        $about = Terms::findOne(1);
+        return $this->render('terms', [
+            'about' => $about,
+        ]);
     }
 
     /**

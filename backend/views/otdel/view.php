@@ -29,10 +29,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+//            'id',
             'name',
-            'status',
-            'sort',
+            [
+                'label' => 'Статус',
+                'value' => function ($model) {
+                    $result = '';
+                    if($model->status == 1){
+                        $result .= 'Активен';
+                    } else {
+                        $result .= 'Неактивен';
+                    }
+
+                    return $result;
+                },
+            ],
         ],
     ]) ?>
 

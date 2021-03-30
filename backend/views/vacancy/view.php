@@ -29,17 +29,39 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'parent_id',
+//            'id',
+            [
+                'label' => 'Отдел',
+                'value' => function ($model) {
+                    $result = '';
+
+                    foreach ($model->parent as $parent) {
+                        $result .= $parent['name'];
+                    }
+                    return $result;
+                },
+            ],
             'name',
             'sfera',
             'city',
             'experience',
-            'content:ntext',
+//            'content:ntext',
             'title',
             'description',
             'keywords',
-            'status',
+            [
+                'label' => 'Статус',
+                'value' => function ($model) {
+                    $result = '';
+                    if($model->status == 1){
+                        $result .= 'Активен';
+                    } else {
+                        $result .= 'Неактивен';
+                    }
+
+                    return $result;
+                },
+            ],
             'sort',
         ],
     ]) ?>

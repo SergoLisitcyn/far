@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Advantages */
+/* @var $model common\models\Image */
 
-$this->title = 'Создать';
-$this->params['breadcrumbs'][] = ['label' => 'Преимущества', 'url' => ['index']];
+$this->title = 'Create Image';
+$this->params['breadcrumbs'][] = ['label' => 'Images', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="advantages-create">
+<div class="image-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

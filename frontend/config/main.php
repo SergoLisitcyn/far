@@ -42,6 +42,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '/' => '/site/index',
+                'about' => '/site/about',
+                'terms' => '/site/terms',
                 'decisions' => '/solutions/index',
             ],
         ],

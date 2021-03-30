@@ -20,8 +20,8 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:image" content="path/to/image.jpg">
-    <link rel="icon" href="/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" href="/img/favicon/faviconM.ico">
+<!--    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">-->
     <meta name="theme-color" content="#000">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
@@ -32,7 +32,7 @@ $route = Yii::$app->controller->route;
 
 if($route == 'vacancy/view'){
     $bodyId = 'vacancyPage';
-} elseif ($route == 'solutions/index'){
+} elseif ($route == 'site/about'){
     $bodyId = 'decisionsPage';
 } else {
     $bodyId = 'isHome';
@@ -57,8 +57,8 @@ if($route == 'vacancy/view'){
                     <div class="menu__body">
                         <nav class="menu__nav">
                             <ul class="menu__list">
-                                <li class="menu__item"><a href="#company" class="menu__link to-company active">О компании</a></li>
-                                <li class="menu__item"><a href="/decisions " class="menu__link to-decisions">Решения</a></li>
+                                <?= Main::widget(['type' => 'linkCompany']) ?>
+                                <li class="menu__item"><a href="#decisions " class="menu__link to-decisions">Решения</a></li>
                                 <li class="menu__item"><a href="#vacancies" class="menu__link to-vacancies">Вакансии</a></li>
                                 <li class="menu__item"><a href="#contacts" class="menu__link to-contacts">Контакты</a></li>
                             </ul>
@@ -67,7 +67,7 @@ if($route == 'vacancy/view'){
                 </div>
                 <div class="header__phone">
                     <div class="phone">
-                        <img src="img/phone.svg" alt="">
+                        <img src="/img/phone.svg" alt="">
                         <?= Main::widget(['type' => 'header_phone']) ?>
                     </div>
                 </div>

@@ -14,6 +14,8 @@
                     ["label" => "Главная страница", "url" => ["main-page/update?id=1"], "icon" => "cog"],
                     ["label" => "Преимущества", "url" => ["advantages/index"], "icon" => "building-o"],
                     ["label" => "Решения", "url" => ["solutions/index"], "icon" => "building-o"],
+                    ["label" => "Cтраница 'О компании'", "url" => ["about/update?id=1"], "icon" => "building-o"],
+                    ["label" => "Страница согласия на обработку ПД", "url" => ["terms/update?id=1"], "icon" => "building-o"],
                 ],
             ]
         ) ?>

@@ -1,6 +1,7 @@
 <?php
 namespace frontend\widgets;
 
+use common\models\About;
 use common\models\MainPage;
 use \yii\bootstrap\Widget;
 class Main  extends Widget
@@ -15,7 +16,10 @@ class Main  extends Widget
     public function run()
     {
         $mainPage = MainPage::findOne(1);
-
-        return $this->render($this->type,['mainPage' => $mainPage]);
+        $about = About::findOne(1);
+        return $this->render($this->type,[
+            'mainPage' => $mainPage,
+            'about' => $about,
+        ]);
     }
 }

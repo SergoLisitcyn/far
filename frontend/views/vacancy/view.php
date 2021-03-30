@@ -162,7 +162,7 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
                         </div>
                         <div class="vacancy__dropzone-upload">
                             <div class="vacancy__dropzone-upload-message">
-                                <img class="vacancy__dropzone-upload-image" src="img/check.svg" alt="Ваше резюме">
+                                <img class="vacancy__dropzone-upload-image" src="/img/check.svg" alt="Ваше резюме">
                                 <div class="vacancy__dropzone-upload-message-text">Ваше резюме загружено</div>
                             </div>
                             <div class="vacancy__dropzone-upload-remove-wrap">

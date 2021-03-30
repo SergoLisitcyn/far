@@ -12,7 +12,7 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
 ?>
 <section class="decisions">
     <div class="container">
-        <h2 class="decisions__title title">О компании</h2>
+        <h2 class="decisions__title title"><?= $about->title ?></h2>
         <?= $about->content ?>
     </div>
 </section>

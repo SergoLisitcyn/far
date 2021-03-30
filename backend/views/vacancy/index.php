@@ -56,11 +56,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'sort',
                 'vAlign' => 'middle',
+                'filter' => false,
                 'value' => function($model){ return $model->sort; },
             ],
 
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'label' => 'Действия',
+                'format' => 'raw',
+                'value' => function ($model, $index, $jobList) {
+                    return Html::tag('a', 'Смотреть', ['href' => \yii\helpers\Url::toRoute(['vacancy/view', 'id' => $index]), 'class' => 'btn btn-primary', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Обновить', ['href' => \yii\helpers\Url::toRoute(['vacancy/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['vacancy/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
+                },
+            ],
         ],
     ]); ?>
 
