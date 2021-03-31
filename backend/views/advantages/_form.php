@@ -35,6 +35,7 @@ use yii\widgets\ActiveForm;
         ]
     ]);
     ?>
+    <?= $form->field($model, 'alt')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'status')->dropDownList([
         '1' => 'Активен',

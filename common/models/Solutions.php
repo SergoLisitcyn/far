@@ -36,7 +36,7 @@ class Solutions extends \yii\db\ActiveRecord
             [['title', 'content'], 'required'],
             [['content'], 'string'],
             [['status', 'sort'], 'integer'],
-            [['title', 'image'], 'string', 'max' => 255],
+            [['title', 'image','alt'], 'string', 'max' => 255],
             [['solutions_file'], 'file'],
         ];
     }
@@ -52,6 +52,7 @@ class Solutions extends \yii\db\ActiveRecord
             'content' => 'Описание',
             'image' => 'Изображение',
             'solutions_file' => 'Изображение',
+            'alt' => 'Alt для изображения',
             'status' => 'Статус',
             'sort' => 'Сортировка',
         ];

@@ -35,7 +35,7 @@ use mihaildev\ckeditor\CKEditor;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true])->hint('например php-developer') ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 

@@ -35,7 +35,7 @@ class Advantages extends \yii\db\ActiveRecord
             [['content'], 'required'],
             [['content'], 'string'],
             [['status', 'sort'], 'integer'],
-//            [['image'], 'string', 'max' => 255],
+            [['alt'], 'string', 'max' => 255],
             [['advantages_file'], 'file'],
         ];
     }
@@ -49,6 +49,7 @@ class Advantages extends \yii\db\ActiveRecord
             'id' => 'ID',
             'content' => 'Описание',
             'advantages_file' => 'Картинка',
+            'alt' => 'Alt для изображения',
             'image' => 'Картинка',
             'status' => 'Статус',
             'sort' => 'Сортировка',
