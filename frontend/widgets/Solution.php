@@ -17,7 +17,7 @@ class Solution  extends Widget
 
     public function run()
     {
-        $solutions = Solutions::find()->where(['status' => 1])->orderBy(['sort' => SORT_ASC])->all();
+        $solutions = Solutions::find()->where(['status' => 1])->all();
 
         return $this->render('solutions',['solutions' => $solutions]);
     }
