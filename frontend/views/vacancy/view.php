@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use \common\models\Otdel;
+use \yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model common\models\Vacancy */
 
@@ -83,7 +84,9 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
                                     }
                                 ?>
                                 <li class="box__item">
-                                    <div class="box__item-title <?= $active ?>"><?= $item->name?></div>
+                                    <a href="<?= Url::toRoute(['vacancy/view', 'url' => $item->url]) ?>">
+                                        <div class="box__item-title <?= $active ?>"><?= $item->name?></div>
+                                    </a>
                                     <div class="box__info">
                                         <span class="box__info-text"><?= $otdel->name?></span>
                                         <span class="box__info-point">•</span>
@@ -180,7 +183,8 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
                 </div>
                 <div class="accept">
                     <input type="checkbox" id="accept__privacy">
-                    <label for="accept__privacy">Я согласен с условиями обработки и использования моих персональных данных</label>
+                    <label for="accept__privacy">Я согласен <a href="/terms"  target="_blank">условиями обработки и
+                            использования</a> моих персональных данных</label>
                 </div>
                 <button class="vacancy__btn btn btn--dark-blue">Отправить</button>
             </form>

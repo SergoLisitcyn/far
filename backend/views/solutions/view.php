@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'content:ntext',
             [
-                'label' => 'Логотип',
+                'label' => 'Изображение',
                 'format' => 'raw',
                 'value' => function ($model) {
                     if($model->image){

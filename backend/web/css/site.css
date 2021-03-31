@@ -147,3 +147,13 @@ section.content form {
     background: #fff;
     padding: 20px;
 }
+
+.fade.in {
+    opacity: 1;
+    margin-top: 10px !important;
+}
+
+.content-header>.breadcrumb {
+    float: left !important;
+    position: initial !important;
+}

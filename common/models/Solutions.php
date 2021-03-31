@@ -48,9 +48,9 @@ class Solutions extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'content' => 'Content',
-            'image' => 'Картинка',
+            'title' => 'Название',
+            'content' => 'Описание',
+            'image' => 'Изображение',
             'solutions_file' => 'Изображение',
             'status' => 'Статус',
             'sort' => 'Сортировка',

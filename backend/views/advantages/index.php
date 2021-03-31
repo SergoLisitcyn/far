@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
+    <?= \kartik\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             'content:ntext',
             [
-                'label' => 'Логотип',
+                'label' => 'Изображение',
                 'format' => 'raw',
                 'value' => function ($model) {
                     if($model->image){
@@ -53,14 +53,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $result;
                 },
             ],
-            'sort',
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'attribute' => 'sort',
+                'hAlign' => 'center',
+                'filter' => false,
+                'value' => function($model){ return $model->sort; },
+            ],
 
             [
                 'label' => 'Действия',
                 'format' => 'raw',
+                'options' => ['width' => '200'],
                 'value' => function ($model, $index, $jobList) {
-                    return Html::tag('a', 'Смотреть', ['href' => \yii\helpers\Url::toRoute(['advantages/view', 'id' => $index]), 'class' => 'btn btn-primary', 'style' => 'font-weight: 100;margin-right:10px'])
-                        .Html::tag('a', 'Обновить', ['href' => \yii\helpers\Url::toRoute(['advantages/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['advantages/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
                         .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['advantages/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
                 },
             ],

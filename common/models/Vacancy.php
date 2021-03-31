@@ -36,10 +36,10 @@ class Vacancy extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'name', 'sfera', 'city', 'experience', 'content'], 'required'],
+            [['parent_id', 'name', 'sfera', 'city', 'experience', 'content','url'], 'required'],
             [['parent_id', 'status', 'sort'], 'integer'],
             [['content'], 'string'],
-            [['name', 'sfera', 'city', 'experience', 'title', 'description', 'keywords'], 'string', 'max' => 255],
+            [['name', 'sfera', 'city', 'experience', 'title', 'description', 'keywords','url'], 'string', 'max' => 255],
         ];
     }
 
@@ -59,6 +59,7 @@ class Vacancy extends \yii\db\ActiveRecord
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
+            'url' => 'Ссылка на вакансию(ЧПУ)',
             'status' => 'Статус',
             'sort' => 'Сортировка',
         ];

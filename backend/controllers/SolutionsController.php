@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Solutions;
 use common\models\SolutionsSearch;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,7 +38,22 @@ class SolutionsController extends Controller
     {
         $searchModel = new SolutionsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        if (Yii::$app->request->post('hasEditable'))
+        {
+            $id=$_POST['editableKey'];
+            $model = $this->findModel($id);
+            $out    = Json::encode(['output'=>'', 'message'=>'']);
+            $post = [];
+            $posted = current($_POST['Solutions']);
+            $post['Solutions'] = $posted;
+            if ($model->load($post)) {
+                $model->save();
+                $output = '';
+                $out = Json::encode(['output'=>$output, 'message'=>'']);
+            }
+            echo $out;
+            return $this->refresh();
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

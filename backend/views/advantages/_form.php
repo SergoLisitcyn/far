@@ -15,7 +15,13 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-
+    <?php if($model->image) :?>
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="<?= $model->image ?>" style="height: 50px">
+            </div>
+        </div>
+    <?php endif; ?>
     <?php
     echo $form->field($model, 'advantages_file')->widget(\kartik\file\FileInput::classname(), [
         'options' => [

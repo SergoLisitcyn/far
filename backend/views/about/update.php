@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\About */
 
-$this->title = 'Обновить страницу О компании: ' . $model->title;
+$this->title = '';
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="about-update">

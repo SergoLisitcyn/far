@@ -5,9 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Advantages */
 
-$this->title = 'Обновить: ' . $model->id;
+$this->title = '';
 $this->params['breadcrumbs'][] = ['label' => 'Преимущества', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="advantages-update">

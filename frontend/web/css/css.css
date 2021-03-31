@@ -23,3 +23,36 @@
 .vacancy__information ul li p {
     margin: 0 !important;
 }
+
+
+.decisions li {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 3px;
+    line-height: 29px;
+}
+
+.decisions li::before {
+    background: url(../img/item.svg) no-repeat 50% 50%;
+    width: 9px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+
+.decisions ul {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.decisions ul li p {
+    margin: 0 !important;
+}
+
+.decisions p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+}

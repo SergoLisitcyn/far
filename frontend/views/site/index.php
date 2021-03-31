@@ -5,6 +5,7 @@ use \frontend\widgets\Main;
 use \frontend\widgets\Advantage;
 use \frontend\widgets\Solution;
 use \common\models\Otdel;
+use \yii\helpers\Url;
 if($mainPage['title']){
     $this->title = $mainPage['title'];
 }
@@ -37,7 +38,7 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
                 <?php foreach ($vacancy as $item) :  ?>
                 <?php $otdel = Otdel::find()->where(['id' => $item->parent_id])->one(); ?>
                 <li class="vacancies__item">
-                    <a href="vacancy/view?id=<?= $item->id ?>" class="vacancies__link">
+                    <a href="<?= Url::toRoute(['vacancy/view', 'url' => $item->url]) ?>" class="vacancies__link">
                         <h3 class="vacancies__link-title"><?php echo $item->name ?></h3>
                         <span class="vacancies__info">
 									<span class="vacancies__info-text"><?php echo $otdel->name ?></span>
@@ -53,7 +54,7 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
                 <?php endforeach; ?>
             </ul>
             <div class="vacancies__message">
-                <p class="vacancies__message-text">Если вы хотите у нас работать, но не нашли подходящей вакансии, вы можете направить ваше резюме в Отдел по работе с персоналом на почту <a class="vacancies__message-email" href="mailto:hr@4slovo.ru">hr@4slovo.ru</a> или заполнить форму обратной связи</p>
+                <p class="vacancies__message-text">Если вы хотите у нас работать, но не нашли подходящей вакансии, вы можете направить ваше резюме в Отдел по работе с персоналом на почту <a class="vacancies__message-email" href="mailto:hr@fairtech.ru">hr@fairtech.ru</a> или заполнить форму обратной связи</p>
 
                 <p class="vacancies__message-text">Ваше резюме будет добавлено в нашу базу данных. Ответственный за подбор персонала специалист свяжется с вами в случае возникновения подходящей вакансии.</p>
             </div>
@@ -129,7 +130,8 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
                 </div>
                 <div class="accept">
                     <input type="checkbox" id="accept__privacy">
-                    <label for="accept__privacy">Я согласен с условиями обработки и использования моих персональных данных</label>
+                    <label for="accept__privacy">Я согласен <a href="/terms"  target="_blank">условиями обработки и
+                            использования</a> моих персональных данных</label>
                 </div>
                 <button class="vacancy__btn btn btn--dark-blue">Отправить</button>
             </form>

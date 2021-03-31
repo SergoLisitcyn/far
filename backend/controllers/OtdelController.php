@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Otdel;
 use common\models\OtdelSearch;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,7 +38,22 @@ class OtdelController extends Controller
     {
         $searchModel = new OtdelSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        if (Yii::$app->request->post('hasEditable'))
+        {
+            $id=$_POST['editableKey'];
+            $model = $this->findModel($id);
+            $out    = Json::encode(['output'=>'', 'message'=>'']);
+            $post = [];
+            $posted = current($_POST['Otdel']);
+            $post['Otdel'] = $posted;
+            if ($model->load($post)) {
+                $model->save();
+                $output = '';
+                $out = Json::encode(['output'=>$output, 'message'=>'']);
+            }
+            echo $out;
+            return;
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
+    <?= \kartik\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
 //            'content:ntext',
             [
-                'label' => 'Логотип',
+                'label' => 'Изображение',
                 'format' => 'raw',
                 'value' => function ($model) {
                     if($model->image){
@@ -55,14 +55,38 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             [
+                'class' => 'kartik\grid\EditableColumn',
+                'attribute' => 'sort',
+                'hAlign' => 'center',
+                'filter' => false,
+                'editableOptions' =>  function ($model, $key, $index) {
+                    return [
+                        'header' => 'сортировку',
+                        'inputType' => 'dropDownList',
+                        'data' => [0 =>'Картинка справа - текст слева',1 =>'Картинка слева - текст справа'],
+                    ];
+                },
+                'value' => function($model){
+                            if($model->sort == 0){
+                                $value = 'Картинка справа - текст слева';
+                                return $value;
+                            } else {
+                                $value = 'Картинка слева - текст справа';
+                                return $value;
+                            }
+
+                },
+            ],
+            [
                 'label' => 'Действия',
                 'format' => 'raw',
+                'options' => ['width' => '200'],
                 'value' => function ($model, $index, $jobList) {
-                    return Html::tag('a', 'Смотреть', ['href' => \yii\helpers\Url::toRoute(['solutions/view', 'id' => $index]), 'class' => 'btn btn-primary', 'style' => 'font-weight: 100;margin-right:10px'])
-                        .Html::tag('a', 'Обновить', ['href' => \yii\helpers\Url::toRoute(['solutions/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['solutions/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
                         .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['solutions/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
                 },
             ],
+
 //            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

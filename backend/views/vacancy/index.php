@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Создать Вакансию', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Вакансию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             [
                 'label' => 'Отдел',
+                'hAlign' => 'center',
                 'value' => function ($model) {
                     $result = '';
 
@@ -55,18 +56,18 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'sort',
-                'vAlign' => 'middle',
+                'hAlign' => 'center',
                 'filter' => false,
                 'value' => function($model){ return $model->sort; },
             ],
-
+            'url',
 
             [
                 'label' => 'Действия',
                 'format' => 'raw',
+                'options' => ['width' => '200'],
                 'value' => function ($model, $index, $jobList) {
-                    return Html::tag('a', 'Смотреть', ['href' => \yii\helpers\Url::toRoute(['vacancy/view', 'id' => $index]), 'class' => 'btn btn-primary', 'style' => 'font-weight: 100;margin-right:10px'])
-                        .Html::tag('a', 'Обновить', ['href' => \yii\helpers\Url::toRoute(['vacancy/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['vacancy/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
                         .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['vacancy/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
                 },
             ],

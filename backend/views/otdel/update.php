@@ -7,7 +7,6 @@ use yii\helpers\Html;
 
 $this->title = 'Обновить Отдел: ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Отделы', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="otdel-update">

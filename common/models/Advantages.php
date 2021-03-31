@@ -47,7 +47,7 @@ class Advantages extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'content' => 'Content',
+            'content' => 'Описание',
             'advantages_file' => 'Картинка',
             'image' => 'Картинка',
             'status' => 'Статус',

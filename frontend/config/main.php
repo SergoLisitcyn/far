@@ -45,6 +45,11 @@ return [
                 'about' => '/site/about',
                 'terms' => '/site/terms',
                 'decisions' => '/solutions/index',
+                [
+                    'pattern' => 'vacancy/<url:\S+>',
+                    'route' => '/vacancy/view',
+                    'defaults' => ['url' => '']
+                ],
             ],
         ],
     ],

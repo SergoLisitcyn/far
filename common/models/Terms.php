@@ -44,11 +44,11 @@ class Terms extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'content' => 'Content',
+            'content' => 'Описание',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
-            'status' => 'Status',
+            'status' => 'Статус',
         ];
     }
 }

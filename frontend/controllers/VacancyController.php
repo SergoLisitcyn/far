@@ -53,10 +53,16 @@ class VacancyController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($url)
     {
+        if(!$url){
+            return $this->redirect('/');
+        }
         $vacancy = Vacancy::find()->where(['status' => 1])->all();
-        $model = $this->findModel($id);
+        $model = Vacancy::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$model){
+            return $this->redirect('/');
+        }
         $feedback = new Feedback();
         if ($feedback->load(Yii::$app->request->post())) {
             $file = UploadedFile::getInstance($feedback, 'file');

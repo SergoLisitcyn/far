@@ -27,9 +27,6 @@ use yii\helpers\Url;
 
         <!-- Menu Footer-->
         <li class="user-footer">
-            <div class="pull-left">
-                <a href="<?= Url::toRoute(['/profile/index']);?>" class="mbtn mbtn-gray mbtn-sm">Профиль</a>
-            </div>
             <div class="pull-right">
                 <?= Html::a(
                     '<i class="fa fa-sign-out"></i> Выход',

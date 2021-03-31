@@ -15,7 +15,13 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-
+    <?php if($model->image) :?>
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="<?= $model->image ?>" style="height: 100px">
+        </div>
+    </div>
+    <?php endif; ?>
     <?php
     echo $form->field($model, 'solutions_file')->widget(\kartik\file\FileInput::classname(), [
         'options' => [

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Terms */
 
-$this->title = 'Обновить: ';
+$this->title = '';
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="terms-update">
