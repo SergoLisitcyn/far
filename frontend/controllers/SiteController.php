@@ -106,6 +106,7 @@ class SiteController extends Controller
                     'success',
                     'Резюме не отправлено. Проверьте форму!'
                 );
+                return $this->refresh();
             }
         }
 
