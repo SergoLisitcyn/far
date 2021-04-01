@@ -104,7 +104,7 @@ class SiteController extends Controller
             } else {
                 Yii::$app->session->setFlash(
                     'success',
-                    false
+                    'Резюме не отправлено. Проверьте форму!'
                 );
             }
         }

@@ -44,6 +44,12 @@ if($route == 'vacancy/view'){
 <div class="wrap">
     <header class="header" id="company">
         <div class="container">
+            <?php if( Yii::$app->session->hasFlash('success') ): ?>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <?php echo Yii::$app->session->getFlash('success'); ?>
+                </div>
+            <?php endif;?>
             <div class="header__top">
                 <a href="/">
                     <img class="header__logo" src="/img/logo.svg" alt="logo">
@@ -58,16 +64,15 @@ if($route == 'vacancy/view'){
                         <nav class="menu__nav">
                             <ul class="menu__list">
                                 <?= Main::widget(['type' => 'linkCompany']) ?>
-                                <li class="menu__item"><a href="#decisions " class="menu__link to-decisions">Решения</a></li>
-                                <li class="menu__item"><a href="#vacancies" class="menu__link to-vacancies">Вакансии</a></li>
-                                <li class="menu__item"><a href="#contacts" class="menu__link to-contacts">Контакты</a></li>
+                                <li class="menu__item"><a href="/#decisions " class="menu__link to-decisions">Решения</a></li>
+                                <li class="menu__item"><a href="/#vacancies" class="menu__link to-vacancies">Вакансии</a></li>
+                                <li class="menu__item"><a href="/#contacts" class="menu__link to-contacts">Контакты</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="header__phone">
                     <div class="phone">
-                        <img src="/img/phone.svg" alt="">
                         <?= Main::widget(['type' => 'header_phone']) ?>
                     </div>
                 </div>
@@ -84,7 +89,6 @@ if($route == 'vacancy/view'){
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= Alert::widget() ?>
         <?= $content ?>
     </main>
 </div>

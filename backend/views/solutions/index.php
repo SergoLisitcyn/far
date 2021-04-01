@@ -54,6 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $result;
                 },
             ],
+
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'sort',
@@ -76,6 +77,13 @@ $this->params['breadcrumbs'][] = $this->title;
                             }
 
                 },
+            ],
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'attribute' => 'sort_position',
+                'hAlign' => 'center',
+                'filter' => false,
+                'value' => function($model){ return $model->sort_position; },
             ],
             [
                 'label' => 'Действия',

@@ -25,7 +25,7 @@ class FeedbackController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['create', 'index','update', 'delete','view'],
+                        'actions' => ['create', 'index','update', 'delete','view','download'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

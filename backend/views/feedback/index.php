@@ -61,7 +61,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $result;
                 }
             ],
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'label' => 'Действия',
+                'format' => 'raw',
+                'options' => ['width' => '100'],
+                'value' => function ($model, $index, $jobList) {
+                    return Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['feedback/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
+                },
+            ],
         ],
     ]); ?>
 

@@ -35,7 +35,7 @@ class Solutions extends \yii\db\ActiveRecord
         return [
             [['title', 'content'], 'required'],
             [['content'], 'string'],
-            [['status', 'sort'], 'integer'],
+            [['status', 'sort','sort_position'], 'integer'],
             [['title', 'image','alt'], 'string', 'max' => 255],
             [['solutions_file'], 'file'],
         ];
@@ -55,6 +55,7 @@ class Solutions extends \yii\db\ActiveRecord
             'alt' => 'Alt для изображения',
             'status' => 'Статус',
             'sort' => 'Сортировка',
+            'sort_position' => 'Сортировка по позициям',
         ];
     }
 

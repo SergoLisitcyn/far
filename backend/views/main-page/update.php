@@ -6,7 +6,6 @@ use yii\helpers\Html;
 /* @var $model common\models\MainPage */
 
 $this->title = 'Обновить главную страницу:';
-//$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="main-page-update">

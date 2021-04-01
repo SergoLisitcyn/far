@@ -2,8 +2,7 @@
 
 namespace common\models;
 
-use Yii;
-
+use \yii\db\ActiveRecord;
 /**
  * This is the model class for table "main_page".
  *
@@ -22,7 +21,7 @@ use Yii;
  * @property string|null $description
  * @property string|null $keywords
  */
-class MainPage extends \yii\db\ActiveRecord
+class MainPage extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -38,7 +37,7 @@ class MainPage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['header_title', 'header_subtitle', 'header_desc', 'name_company', 'phone', 'email_contact', 'email_footer'], 'required'],
+            [['header_title', 'header_subtitle', 'header_desc', 'name_company'], 'required'],
             [['header_desc'], 'string'],
             [['advantages'], 'safe'],
             [['header_title', 'header_subtitle', 'name_company', 'site', 'address', 'phone', 'email_contact', 'email_footer', 'title', 'description', 'keywords'], 'string', 'max' => 255],
