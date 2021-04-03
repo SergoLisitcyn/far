@@ -24,7 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                    'class' => 'yii\grid\SerialColumn',
+                    'options' => ['width' => '10'],
+            ],
 
 //            'id',
             'title',
@@ -32,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Изображение',
                 'format' => 'raw',
+                'hAlign' => 'center',
                 'value' => function ($model) {
                     if($model->image){
                         return Html::img($model->image,['style' => 'height: 60px;']);

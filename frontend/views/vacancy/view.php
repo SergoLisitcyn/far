@@ -120,7 +120,7 @@ $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'conte
         <div class="response__row">
             <h2 class="response__title">Откликнуться на вакансию</h2>
             <h3 class="response__subtitle">Расскажите нам о себе и мы обязательно свяжемся с вами</h3>
-            <form class="vacancy__form" action="/vacancy/view?id=<?php echo $model['id'] ?>" method="post" enctype="multipart/form-data">
+            <form class="vacancy__form" action="/vacancy/<?php echo $model['url'] ?>" method="post" enctype="multipart/form-data">
                 <div class="vacancy__form-wrap">
                     <div class="vacancy__form-col">
                         <div class="vacancy__form-item">

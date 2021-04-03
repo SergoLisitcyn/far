@@ -15,14 +15,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
 
-    <?= GridView::widget([
+    <?= \kartik\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => 'yii\grid\SerialColumn',
+                'options' => ['width' => '10'],
+            ],
 
             [
                 'label' => 'Отдел',
+                'options' => ['width' => '10'],
+                'hAlign' => 'center',
                 'value' => function ($model) {
                     $result = '';
 

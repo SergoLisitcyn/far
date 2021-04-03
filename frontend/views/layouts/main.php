@@ -32,7 +32,7 @@ $route = Yii::$app->controller->route;
 
 if($route == 'vacancy/view'){
     $bodyId = 'vacancyPage';
-} elseif ($route == 'site/about'){
+} elseif ($route == 'site/about' || $route == 'site/terms'){
     $bodyId = 'decisionsPage';
 } else {
     $bodyId = 'isHome';
