@@ -10,6 +10,11 @@ if($about->title){
 $this->params['description'] = $this->registerMetaTag(['name' => 'description', 'content' => $about->description]);
 $this->params['keywords'] = $this->registerMetaTag(['name' => 'keywords', 'content' => $about->keywords]);
 ?>
+<style>
+    p {
+        margin-top: 25px;
+    }
+</style>
 <section class="decisions">
     <div class="container">
         <h2 class="decisions__title title"><?= $about->title ?></h2>
